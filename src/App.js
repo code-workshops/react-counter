@@ -2,8 +2,25 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Counter from './components/Counter'
+
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      total: 0
+    }
+    this.increment = this.increment.bind(this);
+  }
+
+  increment() {
+    let current = this.state.total
+    this.setState({total: current + 1})
+  }
+
   render() {
+    let count = this.state.total
+
     return (
       <div className="App">
         <header className="App-header">
@@ -11,15 +28,9 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
+        <div>{ count }</div>
+        <Counter increment={this.increment} />
       </div>
     );
   }
