@@ -14,6 +14,8 @@ class App extends Component {
   }
 
   increment() {
+    // Alternative: If you're passing the state to a child,
+    // implement this method by passing it as a prop to Counter
     let current = this.state.total
     this.setState({total: current + 1})
   }
@@ -29,8 +31,8 @@ class App extends Component {
             Edit <code>src/App.js</code> and save to reload.
           </p>
         </header>
-        <div>{ count }</div>
-        <Counter increment={this.increment} />
+
+        <Counter />
       </div>
     );
   }

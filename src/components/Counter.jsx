@@ -11,7 +11,6 @@ class Counter extends Component {
 	}
 
 	update() {
-		// this.props.increment()
 		this.setState({value: this.state.value += 1})
 	}
 
